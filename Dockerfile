@@ -1,4 +1,4 @@
-FROM ubuntu:noble
+FROM ubuntu:24.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG TZ=Russia/Moscow
@@ -21,11 +21,9 @@ RUN mkdir /tmp/playwright && cd /tmp/playwright \
     && npm init -y \
     && npm install playwright
 
-# Установка chrome и зависисмостей
+# Установка chrome и зависимостей
+# Используем стандартный путь Playwright
 RUN cd /tmp/playwright && npx playwright install chrome --with-deps
-
-# Путь к браузерам Playwright
-ENV PLAYWRIGHT_BROWSERS_PATH=/opt/google/chrome/chrome
 
 # Очистка временных файлов
 RUN rm -rf /tmp/playwright
