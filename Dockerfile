@@ -24,7 +24,7 @@ RUN mkdir /tmp/playwright && cd /tmp/playwright \
 
 # Установка chrome и зависимостей
 # Используем стандартный путь Playwright
-RUN cd /tmp/playwright && npx playwright install chrome --with-deps
+RUN cd /tmp/playwright && npx playwright install --with-deps
 
 # Очистка временных файлов
 RUN rm -rf /tmp/playwright
