@@ -14,6 +14,7 @@ RUN apt-get update && \
     maven \
     nodejs \
     npm \
+    xvfb \
     && rm -rf /var/lib/apt/lists/*
 
 # Установка Playwright
