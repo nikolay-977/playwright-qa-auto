@@ -1,5 +1,5 @@
-# Используем Ubuntu 22.04 LTS
-FROM ubuntu:22.04
+# Используем Ubuntu 24.04 LTS
+FROM ubuntu:24.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
