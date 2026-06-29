@@ -1,7 +1,7 @@
 FROM ubuntu:noble
 
 ARG DEBIAN_FRONTEND=noninteractive
-ARG TZ=America/Los_Angeles
+ARG TZ=Russia/Moscow
 
 ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8
@@ -29,6 +29,20 @@ ENV PLAYWRIGHT_BROWSERS_PATH=/opt/google/chrome/chrome
 
 # Очистка временных файлов
 RUN rm -rf /tmp/playwright
+
+# === Проверка версий ===
+RUN echo "=== Version Check ===" && \
+    echo "Java version:" && \
+    java -version && \
+    echo "Maven version:" && \
+    mvn -version && \
+    echo "Node.js version:" && \
+    node -v && \
+    echo "npm version:" && \
+    npm -v && \
+    echo "Playwright version:" && \
+    npx playwright --version && \
+    echo "=== Version check completed ==="
 
 WORKDIR /app
 
